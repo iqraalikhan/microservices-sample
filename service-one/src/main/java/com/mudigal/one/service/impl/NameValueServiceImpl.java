@@ -57,7 +57,8 @@ public class NameValueServiceImpl implements NameValueService {
 
 	@Override
 	public Mono<NameValue> getNameValue() {
-		Mono<NameValue> dataFromDB = nameValueRepository.findById(applicationName);
+		Mono<NameValue> dataFromDB = null;
+		dataFromDB = nameValueRepository.findById(applicationName);
 		logger.debug("Data from mongo database getNameValue(): " + dataFromDB.subscribe());
 		return dataFromDB;
 	}

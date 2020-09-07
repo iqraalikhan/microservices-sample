@@ -29,6 +29,7 @@ public class NameValueController {
 	@GetMapping
 	public Mono<NameValue> getNameValue() {
 		logger.debug("Inside getNameValue() method of NameValueController class");
+		System.out.println("We are inside the Name Value Controller");
 		return nameValueService.getNameValue();
 	}
 
